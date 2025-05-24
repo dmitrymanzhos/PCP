@@ -1,0 +1,99 @@
+\documentclass[a3paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{qrcode}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{rotating}
+
+\geometry{margin=2cm}
+\setlength{\columnsep}{2.5cm}
+
+% Цветовая схема
+\definecolor{primary}{RGB}{30, 70, 120}
+\definecolor{secondary}{RGB}{70, 130, 180}
+\definecolor{accent}{RGB}{220, 80, 60}
+
+\titleformat{\section}{\large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\color{secondary}}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+{\fontsize{36}{40}\selectfont\bfseries\color{primary} Настольные часы на ИВ-12 и STM32} \\
+\vspace{0.8cm}
+{\Large\bfseries Манжос Дмитрий, Аксёнов Арсений \quad Группа Б01-301 \quad 2025 год}
+\end{center}
+
+\vspace{1cm}
+
+\begin{multicols}{2}
+
+\section*{Цель проекта}
+Разработать и создать настольные часы с винтажной индикацией на лампах ИВ-12, управляемые микроконтроллером STM32, сочетающие ретро-дизайн с современной элементной базой.
+
+\section*{Основные компоненты}
+\begin{itemize}[leftmargin=*,itemsep=0.5ex,topsep=0.5ex]
+    \item Микроконтроллер: STM32F103C8T6 (Blue Pill)
+    \item Индикаторы: 4×ИВ-12 (часы:минуты)
+    \item Драйвер: ULN2003A
+    \item Блок питания: DC-DC преобразователь 12V→25V/3.3V
+    \item Корпус: 3D-печать (PLA)
+\end{itemize}
+
+\section*{Используемые технологии}
+\begin{itemize}[leftmargin=*,itemsep=0.5ex,topsep=0.5ex]
+    \item Проектирование схем: EasyEDA
+    \item Разводка плат: FlatCAM
+    \item 3D-моделирование: SolidWorks
+    \item Программирование: STM32 HAL (C)
+    \item Производство: ЧПУ-фрезеровка
+\end{itemize}
+
+\subsection*{Принцип работы}
+\begin{enumerate}[leftmargin=*,itemsep=0.5ex,topsep=0.5ex]
+    \item STM32 получает время от внутреннего RTC
+    \item Формирует сигналы управления для драйвера ULN2003A
+    \item Драйвер подаёт напряжение на соответствующие лампы ИВ-12
+    \item Преобразователь обеспечивает необходимое питание
+\end{enumerate}
+
+\columnbreak
+
+\section*{Финальный прототип}
+\begin{center}
+\includegraphics[width=0.8\linewidth,angle=180]{IMG_20250523_145455.jpg} \\
+\vspace{0.3cm}
+{\small Внешний вид собранного устройства}
+\end{center}
+
+\section*{Ключевые особенности}
+\begin{itemize}[leftmargin=*,itemsep=0.5ex,topsep=0.5ex]
+    \item Аутентичный ретро-стиль с лампами ИВ-12
+    \item Открытая архитектура и документация
+    \item Компактные габариты: 150×100×80 мм
+    \item Автономное питание от 12В
+    \item Возможность дальнейшей модернизации
+\end{itemize}
+
+\section*{Ресурсы проекта}
+\begin{center}
+\qrcode[height=3.2cm]{https://github.com/dmitrymanzhos/PCP} \\
+\vspace{0.5cm}
+\href{https://github.com/dmitrymanzhos/PCP}{\color{accent}\textbf{github.com/dmitrymanzhos/PCP}}
+\end{center}
+
+\end{multicols}
+
+\vspace{0.8cm}
+\begin{center}
+\footnotesize Проект выполнен в рамках учебного курса. Требует доработки системы питания и оптимизации корпуса.
+\end{center}
+
+\end{document}

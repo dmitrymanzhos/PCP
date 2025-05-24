@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\title{Пояснительная записка к проекту \\ "Настольные часы на ИВ-12 и STM32"}
+\author{Манжос Дмитрий, Аксёнов Арсений \\ Группа Б01-301}
+\date{23 мая 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Состав проектной команды и распределение ролей}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Манжос Дмитрий}
+    \begin{itemize}
+        \item {Роль:} Проектирование верхней платы, фрезеровка плат, сборка и пайка компонентов, отчётность
+        \item {Вклад:}
+        \begin{itemize}
+            \item Разводка и фрезеровка плат
+            \item Подбор компонентов (ИВ-12, ULN2003a)
+            \item сборка и пайка
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Аксёнов Арсений}
+    \begin{itemize}
+        \item {Роль:} Программная часть, проектирование нижней части,  моделирование корпуса, сборка и пайка
+        \item {Вклад:}
+        \begin{itemize}
+            \item Написание прошивки для STM32
+            \item Разработка корпуса в Solidworks, его печать
+            \item Сборка и пайка
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{Причины выбора проекта}
+\begin{itemize}
+    \item Интерес к ретро-технологиям (винтажный эффект ламп ИВ-12)
+    \item Практическое применение (полезное устройство для повседневного использования)
+    \item Обучающий аспект (работа с STM32, схемотехникой и 3D-моделированием)
+\end{itemize}
+
+\section{Цель и задачи проекта}
+\subsection{Цель}
+Создать настольные часы на базе STM32 и индикаторных ламп ИВ-12.
+
+\subsection{Задачи}
+\begin{enumerate}
+    \item Разработать принципиальную схему и печатную плату
+    \item Реализовать прошивку с функционалом отображения времени
+    \item Изготовить корпус методом 3D-печати
+    \item Изготовить плату на фрезере
+    \item Провести тестирование и отладку
+\end{enumerate}
+
+\section{Описание продукта}
+\subsection{Аппаратная часть}
+\begin{itemize}
+    \item Микроконтроллер: STM32 Blue Pill
+    \item Индикация: 4 x ИВ-12 (часы:минуты)
+    \item Драйвер: ULN2003a для управления лампами
+    \item Блок питания: DC-DC преобразователь (12V → 25V/3.3V/1.5V)
+\end{itemize}
+
+% \subsection{Программная часть}
+% \begin{itemize}
+%     \item Прошивка на C (STM32 HAL)
+%     \item Алгоритм точного времени (RTC или таймеры)
+% \end{itemize}
+
+% \subsection{Корпус}
+% \begin{itemize}
+%     \item 3D-печатный, компактный
+%     \item Отверстия для вентиляции
+% \end{itemize}
+
+\section{Процесс решения задач}
+\subsection{Этапы работы}
+\begin{enumerate}
+    \item Аппаратный прототип:
+    \begin{itemize}
+        \item Сборка схемы на макетной плате
+        \item Репозиторий: \url{https://github.com/dmitrymanzhos/PCP}
+    \end{itemize}
+    
+    \item Печатная плата:
+    \begin{itemize}
+        \item Разводка в EasyEDA + FlatCAM
+        \item Фрезеровка на станке Charly4U
+    \end{itemize}
+    
+    \item Корпус:
+    \begin{itemize}
+        \item Модель в Solidworks
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Проблемы и решения}
+\begin{itemize}
+    \item {Проблема:} Некорректная работа DC-DC преобразователя \\
+    
+    \item {Проблема:} Хрупкость дорожек \\
+\end{itemize}
+
+\section{Анализ аналогов}
+\subsection{Существующие аналоги}
+\begin{itemize}
+    \item Часы на Nixie-лампах:
+    \begin{itemize}
+        \item Дорогие компоненты (лампы IN-14)
+    \end{itemize}
+    
+    \item Часы на светодиодах:
+    \begin{itemize}
+        \item Дешёвые, но менее эффектные
+    \end{itemize}
+\end{itemize}
+
+\subsection{Отличия нашего проекта}
+\begin{itemize}
+    \item Использование доступных ламп ИВ-12
+    \item Компактный корпус с современным дизайном
+    \item Открытый исходный код и документация
+\end{itemize}
+
+
+\subsection{Результаты}
+\begin{itemize}
+    \item Изготовлены комплектующие, возникли проблемы, проект требует доработки
+\end{itemize}
+
+\section{Заключение}
+Проект частично выполнен. Для финальной версии требуется доработка корпуса и стабилизация питания.
+
+\end{document}
